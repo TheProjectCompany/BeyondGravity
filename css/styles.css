@@ -1,0 +1,32 @@
+.banner-image{
+    background-image: url('imgs/drone.jpg');
+    background-size: cover;
+}
+@media only screen and (min-width:768px){
+    .dropdown:hover .dropdown-menu{
+        display: block;
+    }
+} 
+.arrow{
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    top: -5.5px;
+    left: 32px;
+    background-color: #fff;
+    transform: rotate(45deg);
+    cursor: pointer;
+    transition: .3s;
+    z-index: -1;
+}
+@media (max-width: 920px){
+    .arrow{
+        /* z-index: 1;
+        background-color: #fff;
+        left: 10%;
+        transform: scale(1.1) rotate(45deg);
+        transition: .5s; */
+        display: none;
+    }
+}
+
