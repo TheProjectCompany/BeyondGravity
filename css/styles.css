@@ -19,6 +19,9 @@
     transition: .3s;
     z-index: -1;
 }
+.social-icons i:hover{
+    transform:scale(1.25);
+}
 @media (max-width: 920px){
     .arrow{
         /* z-index: 1;
@@ -35,12 +38,21 @@
     .sidebar {
       display: none;
     }
+    .navbar-toggler{
+      display: none;
+    }
   }
-
   @media screen and (max-width: 1000px) {
+    .navbar-dark .navbar-toggler {
+      /* color: rgba(255,255,255,.55); */
+      border: none;
+  }
       .navbar-screen{
           display: none;
       }
+      .social-icons i:hover{
+        transform:scale(1.25);
+    }
       .sidebar {
         position: fixed;
         opacity: 1;
@@ -58,7 +70,7 @@
       }
       .sidebar ul{
           padding-left: 2rem;
-
+          font-size: 1.15rem;
       }
       .show-sidebar {
         transform: translate(0);
@@ -87,10 +99,9 @@
          bottom: 0;
          overflow: hidden;
      }
-     
-      .social-icons {
+      .social-icons-bottom {
         padding-bottom: 2rem;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
       }
       
   }
