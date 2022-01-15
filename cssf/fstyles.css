@@ -141,21 +141,55 @@ ul {
     margin-bottom: 3px;
     color: rgb(212, 204, 204);
     text-transform: capitalize;
-    overflow: inherit;
+    overflow-wrap: normal;
+}
+
+
+/* .footer-widget ul li a::after {
+    content: "";
+    position: absolute;
+    background-color: #37c7f3;
+    height: 3px;
+    width: 100%;
+    left: 0;
+    bottom: -10px;
 }
 
 .footer-widget ul li a:hover {
-    color: #1b046d;
-}
+    color: #37c7f3;
+    transition: 0.5s;
+} */
 
-.footer-widget ul li a {
+.hov {
     color: rgb(212, 204, 204);
     text-transform: capitalize;
+    display: inline-block;
+    position: relative;
+    color: #0087ca;
+}
+
+.hov:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    transform-origin: bottom right;
+    transition: transform 7.5s ease-out;
+}
+
+.hov:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 .subscribe-form {
     position: relative;
     overflow: hidden;
+    /* float: inline-start; */
     /* margin: 10px; */
 }
 
@@ -164,6 +198,15 @@ ul {
     padding: 13px 20px;
     background: #2E2E2E;
     border: 1px solid #2E2E2E;
+    color: #fff;
+}
+
+.subscribe-form input :hover {
+    width: 100%;
+    padding: 10px 10px;
+    background: #2E2E2E;
+    border: 4px solid #37c7f3;
+    /* border-radius: 20%; */
     color: #fff;
 }
 
@@ -179,9 +222,9 @@ ul {
 .subscribe-form button:hover {
     position: absolute;
     right: 0;
-    background: #1b046d;
+    background: #37c7f3;
     padding: 13px 20px;
-    border: 1px solid #1b046d;
+    border: 1px solid white;
     top: 0;
 }
 
