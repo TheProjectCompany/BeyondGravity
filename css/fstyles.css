@@ -4,8 +4,7 @@ ul {
 }
 
 .footer-section {
-    background: rgba(58, 57, 57, 0.938);
-    position: relative;
+    position: absolute;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     line-height: 180%;
 }
@@ -13,7 +12,7 @@ ul {
 #headline {
     font-style: oblique;
     font-size: x-large;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
 }
 
 .footer-cta {
@@ -151,6 +150,7 @@ ul {
     position: relative;
     color: whitesmoke;
     z-index: 100;
+    text-decoration: none;
 }
 
 .hov:hover {
@@ -199,32 +199,30 @@ ul {
     width: 100%;
     padding: 10px 10px;
     background: #2E2E2E;
-    border: 4px solid #37c7f3;
+    border: 4px solid #f36c37;
     /* border-radius: 20%; */
     color: #fff;
 }
 
-.subscribe-form button {
+.btnc {
     position: absolute;
     right: 0;
-    background: #878787;
+    background: #f7120a;
     padding: 13px 20px;
     border: 1px solid #878787;
     top: 0;
 }
 
-.subscribe-form button:hover {
-    position: absolute;
-    right: 0;
-    background: #37c7f3;
-    padding: 13px 20px;
-    border: 1px solid white;
-    top: 0;
+.btnc:hover .tplane {
+    font-size: 160%;
+    color: #fff;
+    /* font-size: 22px; */
+    transform: rotate(-6deg);
 }
 
-.subscribe-form button i {
+.tplane {
     color: #fff;
-    font-size: 22px;
+    font-size: 120%;
     transform: rotate(-6deg);
 }
 
@@ -270,4 +268,143 @@ ul {
 .google-bg:hover {
     background: #DD4B39;
     color: #fff;
+}
+
+.side1,
+.side2 {
+    background-color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', 'sans-serif';
+}
+
+.side1:hover {
+    background-color: #800000;
+    transition-duration: 1s;
+}
+
+.side2:hover {
+    /* background-color: #ee342e; */
+    transition-duration: 1s;
+    background-color: #800000;
+}
+
+.boxx {
+    width: 40vh;
+    border: 5px solid #f5efefb0;
+    height: 13vh;
+    top: 44%;
+    position: relative;
+}
+
+.side1:hover .boxx {
+    display: none
+}
+
+.boxxh {
+    display: none;
+    width: 30vh;
+    height: 30vh;
+    position: relative;
+    top: 30vh;
+}
+
+.boxxh img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 10px rgba(230, 196, 196, 0.3);
+}
+
+.side1:hover .boxxh {
+    display: block;
+}
+
+.side1:hover .boxxh img {
+    display: block;
+}
+
+.boxxp {
+    width: 50%;
+    height: 40%;
+    top: 47vh;
+    position: relative;
+}
+
+.naam {
+    display: none;
+    font-size: 3vh;
+    text-decoration: solid;
+    justify-content: center;
+    text-shadow: #800000;
+}
+
+.side1:hover .naam {
+    display: block;
+}
+
+.side1:hover .boxxp {
+    width: 60%;
+    height: 20%;
+    top: 34vh;
+    position: relative;
+}
+
+.boxx2 {
+    width: 40vh;
+    border: 5px solid #f5efefb0;
+    height: 13vh;
+    top: 44%;
+    position: relative;
+}
+
+.side2:hover .boxx2 {
+    display: none
+}
+
+.boxxh2 {
+    display: none;
+    width: 30vh;
+    height: 30vh;
+    position: relative;
+    top: 30vh;
+}
+
+.boxxh2 img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 10px rgba(230, 196, 196, 0.3);
+}
+
+.side2:hover .boxxh2 {
+    display: block;
+}
+
+.side2:hover .boxxh2 img {
+    display: block;
+}
+
+.boxxp2 {
+    width: 50%;
+    height: 40%;
+    top: 47vh;
+    position: relative;
+}
+
+.naam2 {
+    display: none;
+    font-size: 3vh;
+    text-decoration: solid;
+    justify-content: center;
+    text-shadow: #800000;
+}
+
+.side2:hover .naam2 {
+    display: block;
+}
+
+.side2:hover .boxxp2 {
+    width: 65%;
+    height: 25%;
+    top: 34vh;
+    position: relative;
 }
