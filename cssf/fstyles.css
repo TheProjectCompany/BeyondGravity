@@ -144,28 +144,18 @@ ul {
     overflow-wrap: normal;
 }
 
-
-/* .footer-widget ul li a::after {
-    content: "";
-    position: absolute;
-    background-color: #37c7f3;
-    height: 3px;
-    width: 100%;
-    left: 0;
-    bottom: -10px;
-}
-
-.footer-widget ul li a:hover {
-    color: #37c7f3;
-    transition: 0.5s;
-} */
-
 .hov {
     color: rgb(212, 204, 204);
     text-transform: capitalize;
     display: inline-block;
     position: relative;
-    color: #0087ca;
+    color: whitesmoke;
+    z-index: 100;
+}
+
+.hov:hover {
+    color: rgb(212, 204, 204);
+    text-decoration: none;
 }
 
 .hov:after {
@@ -176,14 +166,18 @@ ul {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #0087ca;
+    background-color: rgb(212, 204, 204);
+    color: rgb(212, 204, 204);
     transform-origin: bottom right;
-    transition: transform 7.5s ease-out;
+    transition: transform 0.5s ease;
+    z-index: 100;
 }
 
 .hov:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
+    color: whitesmoke;
+    z-index: 100;
 }
 
 .subscribe-form {
