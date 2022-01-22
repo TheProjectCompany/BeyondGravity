@@ -408,3 +408,9 @@ ul {
     top: 34vh;
     position: relative;
 }
+
+.team-heading {
+    position: absolute;
+    top: 18vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', 'sans-serif';
+}
