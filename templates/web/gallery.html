@@ -1,0 +1,118 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block extrahead %}
+
+{% endblock %}
+
+{% block title %}{% endblock %}
+
+{% block body%}
+
+    <style>
+        body{
+            background-color: black;
+        }
+    </style>
+    <!-- GALLERY -->
+    <div class="container d flex justify-content-center gallery-container">
+        
+        <h2 class="text-center text-white">Gallery</h2>
+        <div class="wrapper">
+            <!-- filter Items -->
+            <nav class="d-flex justify-content-center">
+                <div class="items">
+                    <span class="item active" data-name="all">All</span>
+                    <span class="item" data-name="drones">Drones</span>
+                    <span class="item" data-name="workshop">WorkShops</span>
+                    <span class="item" data-name="airshow">AirShows</span>
+                    <span class="item" data-name="training">Training</span>
+                </div>
+            </nav>
+            <!-- filter Images -->
+            <div id="gallery" class="gallery">
+            </div>
+        </div>
+        <!-- fullscreen img preview box -->
+        <div class="preview-box">
+            <div class="details">
+                <span class="icon far fa-times-circle text-white"></span>
+            </div>
+            <div class="image-box"><img src="" alt=""></div>
+        </div>
+        <div class="shadow"></div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script>
+        //gallery
+        //selecting all required elements
+        let galleryhtml = "";
+        for (let index = 1; index <= 40; index++) {
+            if(index>=1 && index<=10)
+            galleryhtml += `<div class="image" data-name="drones"><span><img src="/static/web/imgs/${index}.jpg" alt=""></span></div>`;
+            else if(index>=11 && index<=20)
+            galleryhtml += `<div class="image" data-name="workshop"><span><img src="/static/web/imgs/${index}.jpg" alt=""></span></div>`; 
+            else if(index>=21 && index<=30)
+            galleryhtml += `<div class="image" data-name="airshow"><span><img src="/static/web/imgs/${index}.jpg" alt=""></span></div>`;    
+            else
+            galleryhtml += `<div class="image" data-name="training"><span><img src="/static/web/imgs/${index}.jpg" alt=""></span></div>`;      
+        }
+        $('#gallery').html(galleryhtml);
+        const filterItem = document.querySelector(".items");
+        const filterImg = document.querySelectorAll(".gallery .image");
+        window.onload = () => { //after window loaded
+            filterItem.onclick = (selectedItem) => { //if user click on filterItem div
+                if (selectedItem.target.classList.contains("item")) { //if user selected item has .item class
+                    filterItem.querySelector(".active").classList.remove("active"); //remove the active class which is in first item
+                    selectedItem.target.classList.add("active"); //add that active class on user selected item
+                    let filterName = selectedItem.target.getAttribute("data-name"); //getting data-name value of user selected item and store in a filtername variable
+                    filterImg.forEach((image) => {
+                        let filterImges = image.getAttribute("data-name"); //getting image data-name value
+                        //if user selected item data-name value is equal to images data-name value
+                        //or user selected item data-name value is equal to "all"
+                        if ((filterImges == filterName) || (filterName == "all")) {
+                            image.classList.remove("hide"); //first remove the hide class from the image
+                            image.classList.add("show"); //add show class in image
+                        } else {
+                            image.classList.add("hide"); //add hide class in image
+                            image.classList.remove("show"); //remove show class from the image
+                        }
+                    });
+                }
+            }
+            for (let i = 0; i < filterImg.length; i++) {
+                filterImg[i].setAttribute("onclick", "preview(this)"); //adding onclick attribute in all available images
+            }
+        }
+
+        //fullscreen image preview function
+        //selecting all required elements
+        const previewBox = document.querySelector(".preview-box"),
+           //this--> categoryName = previewBox.querySelector(".title p"),
+            previewImg = previewBox.querySelector("img"),
+            closeIcon = previewBox.querySelector(".icon"),
+            shadow = document.querySelector(".shadow");
+
+        function preview(element) {
+            //once user click on any image then remove the scroll bar of the body, so user cant scroll up or down
+            document.querySelector("body").style.overflow = "hidden";
+            let selectedPrevImg = element.querySelector("img").src; //getting user clicked image source link and stored in a variable
+           //this--> let selectedImgCategory = element.getAttribute("data-name"); //getting user clicked image data-name value
+            previewImg.src = selectedPrevImg; //passing the user clicked image source in preview image source
+            //this--> categoryName.textContent = selectedImgCategory; //passing user clicked data-name value in category name
+            previewBox.classList.add("show"); //show the preview image box
+            shadow.classList.add("show"); //show the light grey background
+            closeIcon.onclick = () => { //if user click on close icon of preview box
+                previewBox.classList.remove("show"); //hide the preview box
+                shadow.classList.remove("show"); //hide the light grey background
+                document.querySelector("body").style.overflow = "auto"; //show the scroll bar on body
+            }
+        }
+    </script>
+{% endblock %}
+
+    
+    
+    

@@ -1,0 +1,10 @@
+1. pip install virtualenv
+2. python3 -m venv BGEnv
+3. ./BGEnv/Scripts/Activate  (In Powershell)
+    BGEnv\Scripts\activate.bat (In CMD)
+
+    if powershell venv fails 
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+4. To Deactivate virtual environment
+    deactivate (In Powershell & CMD)
